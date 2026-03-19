@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.0/phpunit.xsd" bootstrap="vendor/autoload.php" colors="true" executionOrder="random" failOnWarning="true" failOnRisky="true" failOnEmptyTestSuite="true" cacheDirectory=".phpunit.cache">
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.0/phpunit.xsd" bootstrap="vendor/autoload.php" colors="true" executionOrder="random" failOnRisky="true" failOnEmptyTestSuite="true" cacheDirectory=".phpunit.cache">
   <testsuites>
     <testsuite name="Codedor Test Suite">
       <directory>tests</directory>
@@ -8,9 +8,4 @@
   <php>
     <server name="APP_KEY" value="base64:llrAPMQL0x08EHCBwf/UkOqptL7p/SXkcTnY2znWurE="/>
   </php>
-  <source>
-    <include>
-      <directory suffix=".php">./src</directory>
-    </include>
-  </source>
 </phpunit>
