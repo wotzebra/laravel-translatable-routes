@@ -3,6 +3,7 @@
 namespace Wotz\TranslatableRoutes\Tests;
 
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Foundation\Application;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Wotz\TranslatableRoutes\Providers\TranslatableRoutesServiceProvider;
 use Wotz\TranslatableRoutes\Tests\Http\Kernel;
@@ -40,7 +41,7 @@ class TestCase extends Orchestra
     }
 
     /**
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param  Application  $app
      */
     protected function setUpDatabase($app)
     {
@@ -69,7 +70,7 @@ class TestCase extends Orchestra
     /**
      * Resolve application HTTP Kernel implementation.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param  Application  $app
      * @return void
      */
     protected function resolveApplicationHttpKernel($app)
