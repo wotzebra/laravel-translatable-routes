@@ -24,7 +24,7 @@ beforeEach(function () {
 
 it('will only prefix the translatable routes name with the locale url prefix', function () {
     $routes = collect(Route::getRoutes()->getRoutes())
-        ->reject(fn ($route) => $route->getName() === 'storage.local');
+        ->reject(fn ($route) => str_starts_with($route->getName() ?? '', 'storage.'));
 
     expect($routes)
         ->sequence(
