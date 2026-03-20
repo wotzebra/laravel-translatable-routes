@@ -24,16 +24,18 @@ beforeEach(function () {
 
 it('will only prefix the translatable routes name with the locale url prefix', function () {
     $routes = collect(Route::getRoutes()->getRoutes())
-        ->reject(fn ($route) => str_starts_with($route->getName() ?? '', 'storage.'));
+        ->reject(fn ($route) => str_starts_with($route->getName() ?? '', 'storage.'))
+        ->sortBy(fn ($route) => $route->getName())
+        ->values();
 
     expect($routes)
         ->sequence(
             fn ($route) => $route
-                ->getName()->toBe('non-translatable')
-                ->wheres->toBe([]),
+                ->getName()->toBe('fr-be.home'),
             fn ($route) => $route
                 ->getName()->toBe('nl-be.home'),
             fn ($route) => $route
-                ->getName()->toBe('fr-be.home')
+                ->getName()->toBe('non-translatable')
+                ->wheres->toBe([]),
         );
 });
